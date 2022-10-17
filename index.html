@@ -11,16 +11,17 @@
 </head>
 <body>
     <!-- /* Header */ -->
+    <section id="top-section" class="ancor-point"></section>
     <header class="header">
         <div class="full-container">
             <div class="header-inner">
-                <a class="header-logo" href="#">
+                <a class="header-logo" href="">
                     <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1da7902ba1c7_Fatobject-Logo.svg" loading="lazy" alt="fatobject logotype">
                 </a>
                 <nav class="header-nav">
-                    <a class="header-nav-link" href="">Projects</a>
-                    <a class="header-nav-link" href="">Contacts</a>
-                    <a class="header-nav-link" href="">
+                    <a class="header-nav-link" href="#projects-section">Projects</a>
+                    <a class="header-nav-link" href="#contacts-block">Contacts</a>
+                    <a class="header-nav-link" href="#contacts-section">
                         Let's talk
                         <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d3b392ba1bd_glyph-arrow-right-white.svg" loading="lazy" alt="" class="header-btn-icon">
                     </a>
@@ -82,9 +83,7 @@
             <div class="city-time-inner">
                 <div class="city-time-content">
                     <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1dded22ba1b5_glyph-globe.svg" loading="lazy" alt="" class="sphere">
-                    <div class="location-time">
-                        Time
-                    </div>
+                    <div id="time" class="location-time"></div>
                     <a href="https://www.google.com/maps/place/50%C2%B027'00.4%22N+30%C2%B031'24.2%22E" target="_blank" class="location-link">
                         <div class="location-location">Kyiv UA</div>
                         <div class="location-separator"></div>
@@ -96,6 +95,7 @@
     </section>
 
     <!-- /* Projects */ -->
+    <section id="projects-section" class="ancor-point"></section>
     <section class="projects">
         <div class="main-container">
             <div class="projects-content">
@@ -312,7 +312,8 @@
         </div>
     </section>
 
-     <!-- /* Footer */ -->
+    <!-- /* Footer */ -->
+    <section id="contacts-section" class="ancor-point"></section>
     <footer class="contacts">
         <div class="full-container">
             <div class="contacts-content">
@@ -346,6 +347,7 @@
                     </div>
                 </div>
                 <div class="contacts-info">
+                    <div id="contacts-block" class="ancor-point cont-block"></div>
                     <div class="contacts-info-head">
                         <h3 class="head-contacts">Contacts</h3>
                         <p class="footer-contacts-description">For all other matters, please send an email to the address below.</p>
@@ -423,8 +425,7 @@
     </div>
     
     
-     <script src="./script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="./scripts/jquery-3.6.1.min.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
