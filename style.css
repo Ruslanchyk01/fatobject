@@ -250,6 +250,17 @@ h3 {
     font-weight: 500
 }
 
+.typed-cursor
+{
+    opacity: .3;
+    animation: 1s blink step-end infinite
+}
+@keyframes blink
+{
+    0%{ opacity: .3; }
+    50%{ opacity: 0; }
+    100%{ opacity: .3; }
+}
 
 /* City and time */
 .city-time-inner
