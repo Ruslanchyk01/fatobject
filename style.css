@@ -61,12 +61,12 @@ h3 {
 }
 
 
-.ancor-point.cont-block
+.anchor-point.cont-block
 {
     transform: translate(0px, -70px);
 }
 
-.ancor-point {
+.anchor-point {
     height: 0px;
     transform: translate(0px, -40px);
 }
