@@ -34,6 +34,3 @@ $('a[href^="#"').on('click', function()
     }, 1600);
     return false;
 });
-
-const time = new Date().toLocaleString('uk-UA', {timeZone: "Europe/Kiev"});
-console.log(time);
