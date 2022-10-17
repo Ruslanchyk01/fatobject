@@ -34,3 +34,16 @@ $('a[href^="#"').on('click', function()
     }, 1600);
     return false;
 });
+
+$(document).ready(function()
+{
+    var typed = new Typed('.txt-type', 
+    {
+        strings: ['startups…', 'brands…', 'businesses…', 'enterprises…', 'you…'],
+        typeSpeed: 80,
+        backDelay: 3000,
+        backSpeed: 40,
+        loop: true,
+        autoInsertCss: false
+    });
+});
