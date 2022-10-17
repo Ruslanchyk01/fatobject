@@ -59,6 +59,18 @@ h3 {
     line-height: 1.15;
     font-weight: 600;
 }
+
+
+.ancor-point.cont-block
+{
+    transform: translate(0px, -70px);
+}
+
+.ancor-point {
+    height: 0px;
+    transform: translate(0px, -40px);
+}
+
 /* Containers */
 .full-container
 {
@@ -179,7 +191,8 @@ h3 {
 
 .intro
 {
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .intro-image-frame {
@@ -553,6 +566,12 @@ h3 {
 
 
 /* Footer */
+.contacts
+{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
 .contacts-content
 {
     display: flex;
@@ -566,6 +585,11 @@ h3 {
     width: 60%;
 }
 
+.contacts-form-head
+{
+    width: 100%;
+    margin-bottom: 45px;
+}
 .message
 {
     background-image: url("https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d3a352ba1b3_glyph-message.svg");
@@ -872,7 +896,8 @@ h3 {
 
 
 /* Progress bar */
-.progress-bar {
+.progress-bar
+{
     position: fixed;
     z-index: -1;
 
@@ -885,7 +910,8 @@ h3 {
     height: 100vh;
 }
 
-.progress-bar-border {
+.progress-bar-border
+{
     position: absolute;
     z-index: 0;
     top: 110px;
@@ -899,7 +925,8 @@ h3 {
     background-color: #e6e6e6;
 }
 
-.page-progress {
+.page-progress
+{
     height: 100%;
     background-color: #183443;
     transform-origin: 0% 0%;
