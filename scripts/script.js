@@ -1,3 +1,7 @@
+$(document).ready(function () {
+
+  });
+
 function ZeroFirstFormat(value)
 {
     if (value < 10)
@@ -5,7 +9,7 @@ function ZeroFirstFormat(value)
         value = '0' + value;
     }
     return value;
-}
+};
 
 
 function DateTime()
@@ -14,9 +18,9 @@ function DateTime()
     let hour = time.getHours();
     const min = ZeroFirstFormat(time.getMinutes());
     const prepand = (hour >= 12)? 'PM' : 'AM';
-    hour = ZeroFirstFormat((hour >= 12) ? hour - 12: hour);
+    hour = ZeroFirstFormat((hour >= 13) ? hour - 12: hour);
     return `${hour}:${min} ${prepand}`;
-}
+};
 
 setInterval(function () 
 {
@@ -35,7 +39,7 @@ $('a[href^="#"').on('click', function()
     return false;
 });
 
-$(document).ready(function()
+$(function()
 {
     var typed = new Typed('.txt-type', 
     {
@@ -46,4 +50,87 @@ $(document).ready(function()
         loop: true,
         autoInsertCss: false
     });
+});
+
+
+$(function()
+{
+    $(window).on('scroll resize', function()
+    {
+        const bar = $(window).scrollTop() / ($(document).height() - $(window).height());
+        $('.page-progress').css(
+            {
+                'height':(100 * bar | 0) + '%'
+            });
+        $('div')[0].value = bar;
+    });
+});
+
+
+$(function()
+{
+    $('.header-navbar-menu-btn').click(function()
+    {
+        $(this).toggleClass('active');
+        $('.header-nav').slideToggle(300);
+    })
+});
+
+
+
+$('.form-btn').on('click', function()
+{
+    $('.success').css('display', 'block');
+});
+
+$('.close-btn').on('click', function()
+{
+    $('.success').css('display', 'none');
+});
+
+$('.modal-close-btn').on('click', function()
+{
+    $('.success').css('display', 'none');
+});
+
+$(function () {
+    $("#contact-form").validate({
+        rules: {
+            name: {
+                required: true,
+                lettersonly: true
+            },
+            email: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    }
+                },
+                customemail: true
+            },
+            message: {
+                maxlength: 10
+            }
+        },
+        messages: {
+            name: {
+                required: "enter your name"
+            },
+            email: {
+                required: "email is required",
+            }
+        }
+    });
+});
+
+// $.extend($.validator.messages(), {
+//     minlength: $.validator.format("enter at least {0} characters"),
+//     maxlength: $.validator.format("enter no more than {0} characters"),
+//     email: "invalid email",
+//     required: "field is required",
+// });
+
+$('#contact-form').submit(() => {
+    $('.form-success').click();
 });

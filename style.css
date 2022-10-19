@@ -60,6 +60,23 @@ h3 {
     font-weight: 600;
 }
 
+h4
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    font-size: 22px;
+    line-height: 1.27;
+    font-weight: 600;
+
+}
+
+.page-wrapper
+{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
 
 .anchor-point.cont-block
 {
@@ -97,25 +114,38 @@ h3 {
 .header
 {
     position: sticky;
+    top: 0px;
     z-index: 100;
-    
-    width: 100%;
-    height: 85px;
-    padding: 22px 0;
-    
+    padding-top: 22px;
+    padding-bottom: 22px;
+    background-color: #fff;
+}
+
+.header-bar-bg
+{
+    position: absolute;
     left: 0%;
     top: 0%;
     right: 0%;
     bottom: 0%;
-   
     background-color: #fff;
 }
 
 .header-inner
 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+
+.header-logo
+{
+    position: relative;
+    z-index: 300;
+    display: inline-block;
+    width: 200px;
+    margin-top: 4px;
+    margin-right: auto;
+    margin-bottom: -4px;
 }
 
 .header-nav
@@ -154,7 +184,7 @@ h3 {
 
 .header-nav-link:last-child
 {
-    padding: 13px 27px 12px 34px;
+    padding: 12px 27px 12px 34px;
     margin-right: 0;
     
     background-color: #183443;
@@ -187,10 +217,38 @@ h3 {
 {
     width: 90%;
 }
-/* Intro */
 
+.header-navbar-menu-btn
+{
+    position: relative;
+    float: right;
+    padding: 18px;
+    font-size: 24px;
+    display: none;
+    cursor: pointer;
+}
+
+.header-navbar-menu-btn.active .btn-menu-line.middle
+{
+    background: rgba(0, 0, 0, 0);
+}
+
+.header-navbar-menu-btn.active .btn-menu-line.top
+{
+    transform: translate3d(0px, 7px, 0px)
+    rotateZ(45deg)
+}
+
+.header-navbar-menu-btn.active .btn-menu-line.bottom
+{
+    transform: translate3d(0px, -7px, 0px)
+    rotateZ(-45deg)
+}
+
+/* Intro */
 .intro
 {
+    display: block;
     padding-top: 80px;
     padding-bottom: 80px;
 }
@@ -239,9 +297,13 @@ h3 {
     font-weight: 600;
 }
 
-.text
+.bot-text
 {
     max-width: 600px;
+}
+
+.text
+{
     margin-bottom: 0;
     margin-top: 0;
     
@@ -254,12 +316,6 @@ h3 {
 {
     opacity: .3;
     animation: 1s blink step-end infinite
-}
-@keyframes blink
-{
-    0%{ opacity: .3; }
-    50%{ opacity: 0; }
-    100%{ opacity: .3; }
 }
 
 /* City and time */
@@ -323,9 +379,8 @@ h3 {
 .location-separator
 {
     height: 1px;
-    
-    margin: 10px 0;
-    
+    margin-top: 12px;
+    margin-bottom: 12px;
     background-color: #183443;
 }
 
@@ -388,12 +443,14 @@ h3 {
     max-width: 100%;
     display: inline-block;
     width: 50%;
-    height: 100%;
+
+    margin-bottom: 60px;
 }
 .project-card
 {
+    height: 100%;
+
     margin-right: 15px;
-    margin-bottom: 60px;
     margin-left: 15px;
 }
 
@@ -401,6 +458,7 @@ h3 {
 {
     position: relative;
     overflow: hidden;
+
     padding-top: 82.03%;
 }
 
@@ -531,17 +589,14 @@ h3 {
 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
+    margin-top: 22px;
 }
 
 .project-card-heading
 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    
-    font-size: 22px;
-    line-height: 1.27;
-    font-weight: 600;
+    padding-top: 4px;
+    flex: 1;
 }
 
 .btn-arrow
@@ -553,6 +608,8 @@ h3 {
 
     background-color: rgb(244, 247, 251);
     cursor: pointer;
+
+    margin-left: 32px;
 
     transition: all .25s ease;
 }
@@ -622,6 +679,12 @@ h3 {
     margin: 0 0 15px;
 }
 
+.form-block
+{
+    display: block;
+    line-height: 0;
+}
+
 .form-row
 {
     display: flex;
@@ -679,6 +742,22 @@ h3 {
     outline: 0;
 }
 
+label.error
+{
+    display: none;
+    color: #F72B2B;
+    line-height: 1;
+    margin: 0;
+    padding-top: 5px;
+    font-size: 13px;
+    margin-bottom: -18px;
+}
+
+.input.error
+{
+    border-color: #f72b2b
+}
+
 .label
 {
     font-size: 15px;
@@ -733,6 +812,145 @@ h3 {
     cursor: pointer;
 }
 
+.success
+{
+    display: none;
+    width: 0px;
+    height: 0px;
+
+    text-align: center;
+    padding: 0px;
+    background-color: #dddddd;
+}
+
+.section-modal
+{
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+
+    padding: 20px;
+
+    align-items: center;
+    background-color: rgba(44, 52, 56, 0.9);
+}
+
+.modal-block
+{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-height: 98vh;
+    max-width: 460px;
+
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.modal-content
+{
+    margin: 40px;
+    line-height: 1;
+    text-align: center;
+}
+
+.modal-logo-frame
+{
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.modal-logo
+{
+    width: 30px;
+    height: 30px;
+}
+
+.modal-head
+{
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.modal-bot
+{
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.close-btn
+{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    min-width: 150px;
+    max-width: 100%;
+
+    padding: 12px 32px 11px;
+    background-color: #183443;
+    color: #fff;
+    
+    font-size: 15px;
+    font-weight: 500;
+    
+    cursor: pointer;
+}
+
+.btn-label
+{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.btn-border-frame
+{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 0;
+    overflow: hidden;
+    margin: 4px;
+}
+
+.modal-close-btn
+{
+    position: absolute;
+    left: auto;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal-close-btn-icon
+{
+    width: 20px;
+    height: 20px;
+}
+
+.modal-bg
+{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    cursor: pointer;
+}
+
 .contacts-info
 {
     width: 280px;
@@ -741,6 +959,11 @@ h3 {
 .contacts-info-head
 {
     margin-bottom: 36px;
+}
+
+.contacts-info-list
+{
+    margin-bottom: -13px;
 }
 
 .contact-link-icon-item
@@ -941,4 +1164,456 @@ h3 {
     height: 100%;
     background-color: #183443;
     transform-origin: 0% 0%;
+}
+
+
+/* Animation */
+@keyframes blink
+{
+    0%{ opacity: .3; }
+    50%{ opacity: 0; }
+    100%{ opacity: .3; }
+}
+
+
+/* Media */
+@media screen and (max-width: 991px)
+{
+    .full-container
+    {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .main-container
+    {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+/*Header*/
+    .header-logo 
+    {
+        width: 175px;
+    }
+
+
+/*Intro*/
+    .intro-image-frame
+    {
+        width: 67%;
+        margin-top: 100px;
+        margin-left: 33%;
+    }
+
+    .intro-image
+    {
+        width: 560px;
+        height: 560px;
+    }
+
+    .intro-content
+    {
+        max-width: 860px;
+        margin-right: auto;
+    }
+
+    .intro-text
+    {
+        max-width: 720px;
+    }
+
+/*City and time*/
+    .city-time-content
+    {
+        top: -196px;
+        margin-right: 0px;
+    }
+
+    .location-link
+    {
+        width: 185px;
+    }
+
+/*Projects*/
+    .projects-content
+    {
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    h2
+    {
+        font-size: 40px;
+    }
+
+    .photo-link
+    {
+        margin-bottom: 50px;
+    }
+
+    h4
+    {
+        font-size: 20px;
+    }
+
+/*Footer*/
+    .contacts-content
+    {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0px;
+    }
+
+    .contacts-form
+    {
+        width: auto;
+    }
+
+    .contacts-info
+    {
+        width: 100%;
+        margin-top: 160px;
+        margin-bottom: 15px;
+        padding-left: 0px;
+    }
+
+    .contacts-info-head
+    {
+        display: flex;
+    }
+
+    .head-contacts-description
+    {
+        width: 50%;
+        margin-left: auto;
+    }
+
+    .contacts-info-list
+    {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        margin-bottom: 0px;
+    }
+
+    .contacts-info-sublist
+    {
+        width: 50%;
+        float: left;
+    }
+
+/*End site*/
+    .end-site
+    {
+        position: static;
+    }
+
+    .end-bar-logo-frame
+    {
+        position: static;
+    }
+
+/*Progress bar*/  
+    .progress-bar
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    .main-container
+    {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .full-container
+    {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+/*Header*/
+    .header
+    {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .header-logo
+    {
+        width: 150px;
+        margin-top: -2px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .header-nav
+    {
+        display: none;
+        margin-top: 15%;
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .header-navbar-menu-btn
+    {
+        display: block;
+        margin-right: -20px;
+        padding: 21px 20px;
+    }
+
+    .btn-menu-line
+    {
+        display: block;
+        width: 18px;
+        height: 2px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        background-color: #183443;
+        transition: all .25s ease;
+    }
+
+    .btn-menu-line.top
+    {
+        margin-right: auto;
+    }
+
+    .btn-menu-line.middle
+    {
+        width: 12px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: auto;
+    }
+
+/*Intro*/
+    .intro
+    {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .intro-image-frame
+    {
+        width: 73%;
+        margin-top: 58px;
+        margin-left: 27%;
+    }
+
+    .intro-image
+    {
+        width: 480px;
+        height: 480px;
+    }
+
+    .intro-text
+    {
+        max-width: 480px;
+    }
+
+    .head-text
+    {
+        font-size: 48px;
+    }
+
+    .bot-text
+    {
+        max-width: 360px;
+    }
+
+    .text
+    {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+/*City and time*/
+    .city-time-content
+    {
+        top: -140px;
+    }
+
+    .sphere
+    {
+        width: 26px;
+        height: 26px;
+        margin-bottom: 12px;
+    }
+
+    .location-time
+    {
+        font-size: 16px;
+    }
+
+    .location-link
+    {
+        width: 165px;
+    }
+    
+    .location-location
+    {
+        padding-top: 5px;
+        padding-bottom: 4px;
+        font-size: 12px;
+    }
+
+    .location-separator
+    {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .location-geo
+    {
+        font-size: 9px;
+    }
+
+/*Projects*/
+    .projects-content
+    {
+        max-width: 640px;
+    }
+
+    .projects-components
+    {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    .project-card
+    {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .frame
+    {
+        margin: 4px;
+    }
+
+/*Footer*/
+    .contacts
+    {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .contacts-content
+    {
+        max-width: 560px;
+    }
+
+    .contacts-form-text
+    {
+        font-size: 18px;
+    }
+
+    .form-row
+    {
+        flex-wrap: wrap;
+    }
+
+    .form-row-field:nth-child(1)
+    {
+        margin-right: 0px;
+        margin-bottom: 30px;
+    }
+
+    label.error
+    {
+        color: #F72B2B;
+        line-height: 1;
+        
+        margin: 0;
+        margin-bottom: -18px;
+        padding-top: 5px;
+        font-size: 13px;
+    }
+
+    .contacts-info
+    {
+        margin-top: 80px;
+        margin-bottom: -13px;
+    }
+
+    .contacts-info-head
+    {
+        display: block;
+    }
+
+    .head-contacts-description
+    {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .contacts-info-list
+    {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .contacts-info-sublist
+    {
+        width: 100%;
+        float: none;
+    }
+}
+
+
+@media screen and (max-width: 479px)
+{
+/*Intro*/
+    .intro-image
+    {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .head-text
+    {
+        font-size: 40px;
+    }
+
+    .bot-text
+    {
+        max-width: 190px;
+    }
+
+/*Projects*/
+    .photo-link
+    {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .project-card-heading
+    {
+        padding-top: 6px;
+    }
+
+    h4
+    {
+        font-size: 18px;
+    }
+
+/*Footer*/
+    .contacts-form-text
+    {
+        font-size: 16px;
+    }
+
+    .contacts-info-head
+    {
+        flex-direction: column;
+    }
 }

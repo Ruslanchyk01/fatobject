@@ -10,9 +10,12 @@
     <title>Full-Service Digital Design Agency — fatobject</title>
 </head>
 <body>
+
+<div class="page-wrapper">
     <!-- /* Header */ -->
     <section id="top-section" class="anchor-point"></section>
     <header class="header">
+        <div class="header-bar-bg"></div>
         <div class="full-container">
             <div class="header-inner">
                 <a class="header-logo" href="">
@@ -26,6 +29,12 @@
                         <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d3b392ba1bd_glyph-arrow-right-white.svg" loading="lazy" alt="" class="header-btn-icon">
                     </a>
                 </nav>
+                
+                <div class="header-navbar-menu-btn" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+                    <div class="btn-menu-line top"></div>
+                    <div class="btn-menu-line middle" style="opacity: 1; height: 2px;"></div>
+                    <div class="btn-menu-line bottom"></div>
+                </div>
             </div>    
         </div>
     </header>
@@ -63,10 +72,11 @@
                 <div class="intro-text">
                     
                     <h1 class="head-text">Full-Service Digital&nbsp;Design Agency</h1>
-                    
-                    <p class="text">Crafting amazing digital products for 
-                        <span class="txt-type"></span>
-                    </p>
+                    <div class="bot-text">
+                        <p class="text">Crafting amazing digital products for 
+                            <span class="txt-type"></span>
+                        </p>
+                    </div>
 
                 </div>
             </div>
@@ -321,15 +331,17 @@
                         <p class="contacts-form-text">We're always interested in working on new products. Reach us now to discuss what you have in mind!</p>
                     </div>
                     <div class="form">
-                        <form class="form-block" action="">
+                        <form id="contact-form" data-name="contact-form" method="get" class="form-block" aria-label="contact-form" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="form-row-field">
                                     <label for="name" class="label">Full name</label>
-                                    <input type="text" class="input form-input" maxlength="256" name="name" data-name="name" placeholder="Enter your name" id="name" required="">
+                                    <input type="text" class="input form-input error" maxlength="256" name="name" data-name="name" placeholder="Enter your name" id="name" required="">
+                                    <label id="name-error" class="error" for="name">enter your name</label>
                                 </div>
                                 <div class="form-row-field">
                                     <label for="email" class="label">Email</label>
-                                    <input type="email" class="input form-input" maxlength="256" name="email" data-name="email" placeholder="Enter your email" minlength="3" id="email" required="">
+                                    <input type="email" class="input form-input error" maxlength="256" name="email" data-name="email" placeholder="Enter your email" minlength="3" id="email" required="">
+                                    <label id="email-error" class="error" for="email">email is required</label>
                                 </div>
                             </div>
                             <div class="form-row-field-text">
@@ -337,51 +349,87 @@
                                 <textarea class="textarea form-input" maxlength="5000" name="message" data-name="message" placeholder="Requirements, intentions, target audience, goals etc." minlength="2" id="message"></textarea>
                             </div>
                             <div class="form-bottom">
-                                <input type="submit" value="Submit" data-wait="Please wait..." class="form-btn">
+                                <input type="submit" onclick="return false" value="Submit" data-wait="Please wait..." class="form-btn">
                             </div>
                         </form>
+                        
+                        
+                        <div class="success" tabindex="-1" role="region" aria-label="contact-form success">
+                            <div class="section-modal">
+                                <div class="modal-block">
+                                    <div class="modal-content">
+                                        <div class="modal-logo-frame">
+                                            <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d23ee2ba1af_fatobject-icon.svg" loading="lazy" alt="fatobject icon" class="modal-logo">
+                                        </div>
+                                        <p class="modal-head">Thank you for&nbsp;your request!</p>
+                                        <p class="modal-bot">We will get back to you soon!</p>
+                                        <a class="close-btn" data-w-id="10e22eed-8aa9-6182-477f-aa23063a4329">
+                                            <div class="btn-label">Close</div>
+                                            <div class="btn-border-frame">
+                                                <div class="btn-line-top-2"></div>
+                                                <div class="btn-line-right-2"></div>
+                                                <div class="btn-line-bottom-3"></div>
+                                                <div class="btn-line-bottom-3"></div>
+                                                <div class="btn-line-left-3"></div>
+                                                <div class="btn-line-left-3"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div data-w-id="10e22eed-8aa9-6182-477f-aa23063a4333" class="modal-close-btn">
+                                        <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1dcd7b2ba1bc_glyph-cross-grey.svg" loading="lazy" alt="" class="modal-close-btn-icon">
+                                    </div>
+                                </div>
+                                <div data-w-id="10e22eed-8aa9-6182-477f-aa23063a4335" class="modal-bg"></div>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
                 <div class="contacts-info">
                     <div id="contacts-block" class="anchor-point cont-block"></div>
                     <div class="contacts-info-head">
                         <h3 class="head-contacts">Contacts</h3>
-                        <p class="footer-contacts-description">For all other matters, please send an email to the address below.</p>
+                        <p class="head-contacts-description">For all other matters, please send an email to the address below.</p>
                     </div>
 
                     <div class="contacts-info-list">
-                        <a data-w-id="a6895090-2c92-e1c3-e324-7eb81a744521" href="mailto:victor@fatobject.com" class="contact-link-icon-item">
-                            <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d06ee2ba1c3_victor.png" loading="lazy" alt="Victor" class="contact-link-img">
-                            <p class="contact-link-content">
-                                victor@fatobject.com
-                            </p>
-                        </a>
+                        <div class="contacts-info-sublist">
+                            <a data-w-id="a6895090-2c92-e1c3-e324-7eb81a744521" href="mailto:victor@fatobject.com" class="contact-link-icon-item">
+                                <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d06ee2ba1c3_victor.png" loading="lazy" alt="Victor" class="contact-link-img">
+                                <p class="contact-link-content">
+                                    victor@fatobject.com
+                                </p>
+                            </a>
                         
-                        <a data-w-id="a6895090-2c92-e1c3-e324-7eb81a744521" href="http://tony@fatobject.com" target="_blank" class="contact-link-icon-item">
-                            <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d276b2ba1c5_tony.png" loading="lazy" alt="Tony" class="contact-link-img">
-                            <p class="contact-link-content">
-                                tony@fatobject.com
-                            </p>
-                        </a>
+                            <a data-w-id="a6895090-2c92-e1c3-e324-7eb81a744521" href="http://tony@fatobject.com" target="_blank" class="contact-link-icon-item">
+                                <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d276b2ba1c5_tony.png" loading="lazy" alt="Tony" class="contact-link-img">
+                                <p class="contact-link-content">
+                                    tony@fatobject.com
+                                </p>
+                            </a>
+                        </div>
 
-                        <a data-w-id="93e34175-66a2-413b-f66d-483c58cf39ee" href="https://www.upwork.com/ag/fatobject/" target="_blank" class="contact-link-icon-item">
-                            <div class="contact-link-icon-frame">
-                                <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d34092ba1ba_glyph-upwork.svg" loading="lazy" alt="" class="contact-link-icon">
-                            </div>
-                            <p class="contact-link-content">
-                                UpWork
-                            </p>
-                        </a>
+                        <div class="contacts-info-sublist">
+                            <a data-w-id="93e34175-66a2-413b-f66d-483c58cf39ee" href="https://www.upwork.com/ag/fatobject/" target="_blank" class="contact-link-icon-item">
+                                <div class="contact-link-icon-frame">
+                                    <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d34092ba1ba_glyph-upwork.svg" loading="lazy" alt="" class="contact-link-icon">
+                                </div>
+                                <p class="contact-link-content">
+                                    UpWork
+                                </p>
+                            </a>
 
-                        <a data-w-id="93e34175-66a2-413b-f66d-483c58cf39ee" href="https://dribbble.com/fatobject" target="_blank" class="contact-link-icon-item">
-                            <div class="contact-link-icon-frame">
-                                <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d68762ba1b2_glyph-dribbble.svg" loading="lazy" alt="" class="contact-link-icon">
-                            </div>
-                            <p class="contact-link-content">
-                                Dribbble
-                            </p>
-                        </a>
-
+                            <a data-w-id="93e34175-66a2-413b-f66d-483c58cf39ee" href="https://dribbble.com/fatobject" target="_blank" class="contact-link-icon-item">
+                                <div class="contact-link-icon-frame">
+                                    <img src="https://uploads-ssl.webflow.com/62738bb78beb1d26632ba17e/62738bb78beb1d68762ba1b2_glyph-dribbble.svg" loading="lazy" alt="" class="contact-link-icon">
+                                </div>
+                                <p class="contact-link-content">
+                                    Dribbble
+                                </p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -419,9 +467,10 @@
             </div>
         </div>
     </div>
+
+</div>
     
-    
-    <script src="./scripts/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="./scripts/script.js"></script>
 </body>
