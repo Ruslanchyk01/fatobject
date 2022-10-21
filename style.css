@@ -83,7 +83,8 @@ h4
     transform: translate(0px, -70px);
 }
 
-.anchor-point {
+.anchor-point
+{
     height: 0px;
     transform: translate(0px, -40px);
 }
@@ -92,7 +93,7 @@ h4
 .full-container
 {
     max-width: 1350px;
-
+    
     margin-right: auto;
     margin-left: auto;
     padding-right: 40px;
@@ -124,8 +125,9 @@ h4
 .header-bar-bg
 {
     position: absolute;
+    display: none;
     left: 0%;
-    top: 0%;
+    top: 0;
     right: 0%;
     bottom: 0%;
     background-color: #fff;
@@ -157,9 +159,19 @@ h4
 
 .header-nav-link
 {
+   
     position: relative;
     
     margin-right: 37px;
+}
+
+.nav-link
+{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 18px;
 }
 
 .header-nav-link:nth-child(-n+2)::after
@@ -228,18 +240,18 @@ h4
     cursor: pointer;
 }
 
-.header-navbar-menu-btn.active .btn-menu-line.middle
+.header-nav-menu-btn.active .btn-menu-line.middle
 {
     background: rgba(0, 0, 0, 0);
 }
 
-.header-navbar-menu-btn.active .btn-menu-line.top
+.header-nav-menu-btn.active .btn-menu-line.top
 {
     transform: translate3d(0px, 7px, 0px)
     rotateZ(45deg)
 }
 
-.header-navbar-menu-btn.active .btn-menu-line.bottom
+.header-nav-menu-btn.active .btn-menu-line.bottom
 {
     transform: translate3d(0px, -7px, 0px)
     rotateZ(-45deg)
@@ -530,7 +542,7 @@ h4
     bottom: 0%;
 }
 
-.photo-frame:hover .h-line
+.project-card:hover .photo-frame .h-line
 {
     width: 50%;
     height: 1px;
@@ -578,12 +590,11 @@ h4
     bottom: 0%;
 }
 
-.photo-frame:hover .v-line
+.project-card:hover .photo-frame .v-line
 {
     width: 1px;
     height: 50%;
 }
-
 
 .project-card-caption
 {
@@ -614,7 +625,7 @@ h4
     transition: all .25s ease;
 }
 
-.btn-arrow:hover
+.project-card:hover .project-card-caption .btn-arrow
 {
     background-color: #45ff51;
 }
@@ -712,6 +723,11 @@ h4
     line-height: 1;
 }
 
+input::placeholder
+{
+    opacity: .5;
+}
+
 .form-input
 {
     margin: 0;
@@ -726,7 +742,6 @@ h4
     font-family: Epilogue, sans-serif;
     font-size: 15px;
 
-    opacity: .5;
     transition: all .25s ease;
 }
 
@@ -742,6 +757,11 @@ h4
     outline: 0;
 }
 
+.input.error
+{
+    border: 1px solid #F72B2B;
+}
+
 label.error
 {
     display: none;
@@ -751,11 +771,6 @@ label.error
     padding-top: 5px;
     font-size: 13px;
     margin-bottom: -18px;
-}
-
-.input.error
-{
-    border-color: #f72b2b
 }
 
 .label
@@ -772,7 +787,8 @@ label.error
     margin-bottom: 30px;
 }
 
-.textarea {
+.textarea
+{
     display: block;
     overflow: auto;
     max-height: 320px;
@@ -781,6 +797,11 @@ label.error
     min-width: 100%;
 
     line-height: 1.5;
+}
+
+textarea::placeholder
+{
+    opacity: .5;
 }
 
 .form-bottom
@@ -984,6 +1005,7 @@ label.error
     margin-right: 17px;
 }
 
+
 .contact-link-content
 {
     position: relative;
@@ -1008,7 +1030,8 @@ label.error
     transition: all .25s ease;
 }
 
-.contact-link-content:hover::after
+
+.contact-link-icon-item:hover .contact-link-content::after
 {
     width: 100%;
 }
@@ -1027,7 +1050,7 @@ label.error
     transition: all .25s ease;
 }
 
-.contact-link-icon-frame:hover
+.contact-link-icon-item:hover .contact-link-icon-frame
 {
     border-color:#45ff51;
 }
@@ -1046,7 +1069,6 @@ label.error
     margin: auto;
     opacity: 1;
 }
-
 
 /* Ending site */
 .end-site
@@ -1189,6 +1211,11 @@ label.error
     {
         padding-right: 40px;
         padding-left: 40px;
+    }
+
+    .anchor-point
+    {
+        transform: translate(0px, -20px);
     }
 
 /*Header*/
@@ -1341,13 +1368,22 @@ label.error
         padding-left: 20px;
     }
 
+    .anchor-point
+    {
+        transform: translate(0px, -50px);
+    }
+
+    .anchor-point.cont-block
+{
+    transform: translate(0px, -100px);
+}
+
 /*Header*/
     .header
     {
         padding-top: 0px;
         padding-bottom: 0px;
     }
-
     .header-logo
     {
         width: 150px;
@@ -1358,15 +1394,94 @@ label.error
 
     .header-nav
     {
+        position: absolute;
+        overflow: hidden;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 92%;
+        margin-left: 4%;
+
         display: none;
         margin-top: 15%;
         font-size: 30px;
-        text-align: left;
     }
 
-    .header-navbar-menu-btn
+    .header-nav-link
+    {
+        display: inline-block;
+        width: 100%;
+
+        margin-right: 0px;
+        margin-left: 0px;
+
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1;
+        padding: 20px 24px!important;
+    }
+
+    .header-nav-link:nth-child(-n+2)
+    {
+        border-top: 1px solid #ebebeb;
+    }
+
+    .header-nav-link:nth-child(-n+2)::after
+    {
+        display: none;
+    }
+
+    .header-nav-link:last-child
+    {
+        z-index: 1;
+    }
+
+    .nav-link:nth-child(-n+2)
+    {
+        position: relative;
+
+        display: inline-block;
+        line-height: 1;
+
+        margin-right: 15px;
+        margin-left: 15px;
+        padding-top: 7px;
+        padding-bottom: 5px;
+
+        font-size: 30px;
+    }
+
+    .nav-link:last-child
+    {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        
+        line-height: 1;
+
+        margin-top: 1.5px;
+        margin-right: 0;
+        margin-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        font-size: 30px;
+    }
+
+    .header-btn-icon
+    {
+        width: 24px;
+        height: 24px;
+        margin-top: 2px;
+        margin-left: 12px;
+        margin-right: 0px;
+        float: right;
+    }
+
+    .header-nav-menu-btn
     {
         display: block;
+        z-index: 1;
         margin-right: -20px;
         padding: 21px 20px;
     }
@@ -1393,6 +1508,30 @@ label.error
         margin-top: 5px;
         margin-bottom: 5px;
         margin-left: auto;
+    }
+
+    .menu-logo-frame
+    {
+        position: fixed;
+        left: 0%;
+        right: 0%;
+        bottom: 7.5%;
+        display: none;
+        width: 32px;
+        height: 32px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .menu-logo
+    {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        margin: 4px 3.5px;
+        padding: 3px 3.5px;
     }
 
 /*Intro*/
@@ -1572,6 +1711,11 @@ label.error
 
 @media screen and (max-width: 479px)
 {
+    .anchor-point
+    {
+        transform: translate(0px, -30px);
+    }
+
 /*Intro*/
     .intro-image
     {
